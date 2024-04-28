@@ -1,0 +1,61 @@
+<div class="intro-section" id="home-section">
+    <div
+      class="slide-1"
+      style="background-image: url('assets/images/hero_1.jpg')"
+      data-stellar-background-ratio="0.5"
+    >
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12">
+            <div class="row align-items-center">
+              <div
+                class="col-lg-12 ml-auto"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <form #editCourseForm="ngForm" (ngSubmit)="validate()">
+                  <h3 class="mb-4" style="color: #7971ea; text-align: center">
+                    Edit Student
+                  </h3>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      [(ngModel)]="course.coursename"
+                      [ngModelOptions]="{ standalone: true }"
+                      class="form-control"
+                      placeholder="coursename"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      [(ngModel)]="course.coursePeriode"
+                      [ngModelOptions]="{ standalone: true }"
+                      class="form-control"
+                      placeholder="coursePeriode"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      [(ngModel)]="course.email"
+                      [ngModelOptions]="{ standalone: true }"
+                      placeholder="email"
+                    />
+                  </div>
+                  <div class="form-group" style="text-align: center">  
+                    <input
+                      type="submit"
+                      class="btn btn-primary py-3 px-5"
+                      value="edit student"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

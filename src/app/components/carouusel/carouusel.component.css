@@ -1,0 +1,93 @@
+.product{
+    padding: 20px 20px;
+    overflow: hidden;
+    justify-content: center;
+
+}
+.slide-wrap{
+    position: relative;
+    right: 20px;
+    position: relative; /* This makes it a reference for absolute positioning */
+
+}
+.slide-main{
+    display: flex; /* Use flexbox */
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+.item {
+    width: 300px;
+    height: 370px;
+    background-color: #7971ea;
+    position: relative;
+    justify-content: center;
+    margin-right: 23px;
+    border-radius: 10px; /* Optional: Add spacing between items */
+    top:-2px;
+    cursor: pointer; 
+}
+.item:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+  }
+.text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50% ,-50%) ;
+    color: #d3caca;
+    font-size: 24px;
+    font-weight: bolder;
+}
+.next:hover {
+    background-color: #0057b357;
+    cursor: pointer;
+  }
+
+  .prev:hover {
+    background-color: #0057b357;
+    cursor: pointer;
+  }
+  .prev, .next {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust to precisely center */
+    z-index: 10; /* Ensure they are above the slides */
+    background-color: #25c2e785;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+}
+.prev {
+  left: -10px; /* Position at the left edge of .slide-wrap */
+}
+.next {
+  left: 910px; /* Position at the left edge of .slide-wrap */
+}
+button.prev {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+  
+  button.prev i,
+  button.prev svg {
+    margin-right: 5px;  /* Space between icon and text */
+  }
+  button.next, button.prev {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+  
+  button.next i, button.next svg,
+  button.prev i, button.prev svg {
+    margin: 0 5px;  /* Space between icon and text */
+  }
+  
+  button.next svg, button.prev svg {
+    height: 16px;  /* Ensure the SVG has a fixed size for consistency */
+    width: 16px;
+  }
+  

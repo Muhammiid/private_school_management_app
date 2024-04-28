@@ -1,0 +1,28 @@
+<div class="site-section courses-title"  id="courses-section">
+    <div style="margin-top: 50px;" class="container text-center"> <!-- Ajout de la classe text-center pour centrer le contenu -->
+      <div class="row mb-5 justify-content-center">
+        <div class="col-lg-12" data-aos="fade-up" data-aos-delay=""> <!-- Utilisation de col-lg-12 pour occuper toute la largeur de la rangée -->
+          <h2 class="section-title">Student Info</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="teacher text-center" *ngIf="student">
+    <img [src]="student.photo" alt="Student Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+    <div class="py-2">
+      <h3 class="text-black">Name: {{ student.firstName }} {{ student.lastName }}</h3>
+      <p class="position">Phone Number: {{ student.phoneNumber }}</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro eius suscipit delectus enim iusto tempora, adipisci at provident.</p>
+  
+      <div class="form-group">
+        <label for="courseSelect">Select Course:</label>
+        <select id="courseSelect" class="form-control" style="background-color: aqua;" (change)="selectCourse($event)">
+          <option [value]="c._id" *ngFor="let c of courses">{{ c.coursename }}</option>
+        </select>
+      </div>
+      <button (click)="affecteStudent()" class="btn btn-warning">affecte</button>
+    </div>
+  </div>
+  
+
+  

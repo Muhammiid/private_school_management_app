@@ -1,0 +1,25 @@
+<table style="text-align: center;color: bisque;"  class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">fullname</th>
+        <th scope="col">tel</th>
+        <th scope="col">statut</th>
+        <th scope="col">specialite</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let elt of teachers">
+      <td>{{elt.firstName}} {{elt.lastName}}</td>
+      <td>{{elt.phoneNumber}}</td>
+      <td>{{elt.statut}}</td>
+      <td>{{elt.speciality}}</td> 
+      <td>
+        <button class="btn btn-info mx-2"  (click)="goToTeacherInfo(elt._id)" >Display</button>
+        <button class="btn btn-warning mx-2 " (click)="goToEditTeacher(elt._id)">Edit</button>
+        <button class="btn btn-danger mx-2 " (click)="deleteUser(elt._id)" >Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+

@@ -1,0 +1,22 @@
+<table style="text-align: center;color: bisque;"class="table table-striped" class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">fullname</th>
+        <th scope="col">tel</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let elt of students">
+      <td>{{elt._id}}</td>
+      <td>{{elt.firstName}}{{elt.lastName}}</td>
+      <td>{{elt.phoneNumber}}</td>
+      <td>
+        <button class="btn btn-info mx-2" (click)="goToStudentInfo(elt._id)"  >Display</button>
+        <button class="btn btn-warning mx-2" (click)="goToEditStudent(elt._id)">Edit</button>
+        <button class="btn btn-danger mx-2 " (click)="deleteUser(elt._id)" >Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>

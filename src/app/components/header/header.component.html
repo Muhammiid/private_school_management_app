@@ -1,0 +1,64 @@
+<header
+  class="site-navbar py-4 js-sticky-header site-navbar-target"
+  role="banner"
+>
+  <div class="container-fluid">
+    <div class="d-flex align-items-center">
+      <div class="site-logo mr-auto w-25">
+        <a routerLink="app-home">OneSchool</a>
+      </div>
+
+      <div class="mx-auto text-center">
+        <nav
+          class="site-navigation position-relative text-right"
+          role="navigation"
+        >
+          <ul
+            class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block m-0 p-0"
+          >
+            <li><a routerLink="app-home" routerLinkActive="active" class="nav-link text-left">Home</a></li>
+            <li><a  routerLink="app-all-courses" routerLinkActive="active"  class="nav-link">Courses</a></li>
+            <li><a routerLink="app-teachers"   routerLinkActive="active" >Teachers</a></li>
+            <li  *ngIf="isloggedIn()&&decodedToken.role=='admin'" class="has-children">
+              <a  class="nav-link text-left">Admin</a>
+              <ul class="dropdown">
+                <li><a routerLink="app-add-course">Add Course</a></li>
+                <li ><a routerLink="app-dashboard-admin">Dashboard</a></li>
+              </ul>
+            </li>
+            <li  *ngIf="isloggedIn()&&decodedToken.role=='teacher'" class="has-children">
+              <a  class="nav-link text-left">Teacher</a>
+              <ul class="dropdown">
+                <li><a routerLink="app-add-course-teacher">Add Course</a></li>
+                <li ><a routerLink="app-teacher-dashboard">Dashboard</a></li>
+              </ul>
+            </li>
+            <li  *ngIf="isloggedIn()&&decodedToken.role=='student'" class="has-children">
+              <a  class="nav-link text-left">Student</a>
+              <ul class="dropdown">
+                <li ><a routerLink="app-dashboard-student">Dashboard</a></li>
+              </ul>
+            </li>
+            <li  *ngIf="isloggedIn()&&decodedToken.role=='parent'" class="has-children">
+              <a  class="nav-link text-left">Parent</a>
+              <ul class="dropdown">
+                <li ><a routerLink="app-dashboard-parent">Dashboard</a></li>
+              </ul>
+            </li>
+            <li   *ngIf="!isloggedIn()"class="has-children">
+              <a routerLinkActive="active"  class="nav-link text-left">SignUp</a>
+              <ul class="dropdown">
+                <li><a routerLinkActive="active" routerLink="app-signup-admin">SignUp Admin</a></li>
+                <li><a routerLinkActive="active" routerLink="app-signup-teacher">SignUp Teachers</a></li>
+                <li><a routerLinkActive="active" routerLink="app-signup-student">SignUp Students</a></li>
+                <li><a routerLinkActive="active" routerLink="app-signup-parent">SignUp Parents</a></li>
+              </ul>
+            </li>
+            <li *ngIf="!isloggedIn()"><a routerLinkActive="active" routerLink="app-login">Login</a></li>
+            <li *ngIf="isloggedIn()" (click)="logout()"><a routerLink="app-signup-parent">LogOut</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

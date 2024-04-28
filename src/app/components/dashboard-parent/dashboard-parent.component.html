@@ -1,0 +1,107 @@
+<div class="intro-section" id="home-section">
+    <div
+      class="slide-1"
+      style="background-image: url('assets/images/hero_1.jpg')"
+      data-stellar-background-ratio="0.5"
+    >
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12">
+            <div class="row align-items-center">
+              <div
+                class="col-lg-12 ml-auto"
+                data-aos="fade-up"
+                data-aos-delay="500"
+                style="text-align: center"
+              >
+                <h1 class="mb-4" style="color: #7971ea; text-align: center">
+                  Child Courses Result
+                </h1>
+  
+                <ul
+                  class="nav nav-tabs"
+                  id="myTab"
+                  role="tablist"
+                  style="margin-top: 50px"
+                >
+                  <li class="nav-item"></li>
+                  <li class="nav-item"></li>
+                  <li class="nav-item" style="text-align: center">
+                    <a
+                      class="nav-link"
+                      id="contact-tab"
+                      data-toggle="tab"
+                      href="#contact"
+                      role="tab"
+                      aria-controls="contact"
+                      aria-selected="true"
+                    ></a>
+                  </li>
+                  <li class="nav-item"></li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <div
+                    class="tab-pane fade"
+                    id="home"
+                    role="tabpanel"
+                    aria-labelledby="home-tab"
+                  >
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="profile"
+                    role="tabpanel"
+                    aria-labelledby="profile-tab"
+                  >
+                  </div>
+                  <div
+                    class="tab-pane fade show active"
+                    id="contact"
+                    role="tabpanel"
+                    aria-labelledby="contact-tab"
+                  >
+                    <table
+                      style="text-align: center; color: bisque"
+                      class="table table-striped"
+                      class="table table-striped"
+                    >
+                      <thead>
+                        <tr>
+                          <th scope="col">student</th>
+                          <th scope="col">Course</th>
+                          <th scope="col">teacher</th>
+                          <th scope="col">note</th>
+                          <th scope="col">evaluation</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let elt of courses">
+                          <td>{{ elt.studentId.firstName }} {{ elt.studentId.lastName }}</td>
+                          <td>{{ elt.courseId.coursename }}</td>
+                          <td>{{ elt.courseId.teacherId.firstName }} {{ elt.courseId.teacherId.lastName }}</td>
+                          <td>{{ elt.note }}</td>
+                          <td [ngStyle]="{color:evaluation(elt.note ) }" >
+                            <span *ngIf="elt.note  < 10">Bad</span>
+                            <span *ngIf="elt.note  >=10 && elt.note  <= 13">medium</span>
+                            <span *ngIf="elt.note  >15 && elt.note  <= 17">Good</span>
+                            <span *ngIf="elt.note  >17 ">Excellent</span>
+                        </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="stadium"
+                    role="tabpanel"
+                    aria-labelledby="stadium-tab"
+                  >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
