@@ -8,6 +8,8 @@ export class UserService {
   userURL: string = 'http://localhost:3000/users';
 
   constructor(private httpClient: HttpClient) {}
+
+  
   getAllUsers() {
     return this.httpClient.get<{ users: any }>(this.userURL);
   }
@@ -17,7 +19,8 @@ export class UserService {
       `${this.userURL}/${_id}`
     );
   }
-  affecteUser(studentId:any,courseId:any) {
+
+  affecteUser(studentId:any,courseId:any) { 
     return this.httpClient.get<{ msg: string }>(
       `http://localhost:3000/users/affecte/${studentId}/${courseId}`
       

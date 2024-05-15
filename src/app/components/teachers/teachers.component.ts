@@ -6,6 +6,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './teachers.component.html',
   styleUrls: ['./teachers.component.css']
 })
+
 export class TeachersComponent implements OnInit {
 teachers:any=[];
   constructor(private userService:UserService) { }
