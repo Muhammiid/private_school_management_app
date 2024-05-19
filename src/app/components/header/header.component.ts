@@ -5,24 +5,24 @@ import { jwtDecode } from 'jwt-decode';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
   decodedToken: any;
-  constructor(private router:Router) { }
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
+
   isloggedIn(): boolean {
     let token: any = sessionStorage.getItem('token');
-
     if (token) {
       this.decodedToken = jwtDecode(token);
     }
     return !!token; // Returns true if token exists, false otherwise
   }
-  logout(){
-    sessionStorage.removeItem("token")
-    this.router.navigate(['app-home'])
+
+  logout() {
+    sessionStorage.removeItem('token');
+    this.router.navigate(['app-home']);
   }
 }
