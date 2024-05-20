@@ -1,14 +1,21 @@
-<div class="teacher text-center">
+<div
+  class="card"
+  style="width: 300px; height: 200px; border-radius: 10px; margin-bottom: 200px"
+>
   <img
     [src]="teacher.photo"
-    class="img-fluid w-50 rounded-circle mx-auto mb-4"
+    style="width: 300px; height: 150px; border-radius: 10px"
+    class="card-img-top"
+    alt="assets/images/person_3.jpg"
   />
-  <div class="py-2">
-    <h3 class="text-black">{{ teacher.firstName }} {{ teacher.lastName }}</h3>
-    <p class="position">{{ teacher.speciality }}</p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro eius
-      suscipit delectus enim iusto tempora, adipisci at provident.
+  <div
+    class="card-body"
+    style="width: 300px; background-color: rgb(255, 255, 255)"
+  >
+    <h4 class="card-title">{{ teacher.firstName }} {{ teacher.lastName }}</h4>
+    <h6 class="card-title">{{ teacher.speciality }}</h6>
+    <p class="card-text" style="color: black">
+      Some quick example text to build on the card title and make up the bulk.
     </p>
   </div>
 </div>

@@ -1,50 +1,22 @@
-<div class="intro-section" id="home-section">
+<div style="display: block">
+  <div class="intro-section" id="home-section">
     <div
       class="slide-1"
-      style="background-image: url('assets/images/hero_1.jpg')"
+      style="background-image: url('assets/images/hero_1.jpg'); height: 500px"
       data-stellar-background-ratio="0.5"
     >
       <div class="container">
-        <div class="row align-items-center">
+        <div class="row justify-content-center align-items-center">
           <div class="col-12">
-            <div class="row align-items-center">
+            <div class="row justify-content-center align-items-center">
               <div
-                class="col-lg-12 ml-auto"
+                class="col-lg-7 text-center"
                 data-aos="fade-up"
-                data-aos-delay="500"
+                data-aos-delay=""
               >
-              <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-top: 200px;">
-                <li class="nav-item">
-                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-                    aria-selected="true">teachers</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                    aria-selected="false">students</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-                    aria-selected="false">courses</a>
-                    
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="stadium-tab" data-toggle="tab" href="#stadium" role="tab" aria-controls="stadium"
-                    aria-selected="false">parents</a>
-                </li>
-              </ul>
-              <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                  <app-teachers-tab></app-teachers-tab></div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <app-student-tab></app-student-tab>
-                 </div>
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                    <app-course-tab></app-course-tab>
-                  </div>
-                  <div class="tab-pane fade" id="stadium" role="tabpanel" aria-labelledby="stadium-tab">
-                    <app-parent-tab></app-parent-tab>
-                   </div>
-              </div>
+              <h2 class="section-title" style="color: #7971ea">
+             Dashboard
+              </h2>
               </div>
             </div>
           </div>
@@ -52,12 +24,110 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
+</div>
+<div style="background-color: #343a40">
+  <div class="row">
+    <div class="col-12 text-center"></div>
+  </div>
+  <div class="card-container mt-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12">
+          <div class="row align-items-center">
+            <div
+              class="col-lg-12 ml-auto"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    id="home-tab"
+                    data-toggle="tab"
+                    href="#home"
+                    role="tab"
+                    aria-controls="home"
+                    aria-selected="true"
+                    >teachers</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    id="profile-tab"
+                    data-toggle="tab"
+                    href="#profile"
+                    role="tab"
+                    aria-controls="profile"
+                    aria-selected="false"
+                    >students</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    id="contact-tab"
+                    data-toggle="tab"
+                    href="#contact"
+                    role="tab"
+                    aria-controls="contact"
+                    aria-selected="false"
+                    >courses</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    id="stadium-tab"
+                    data-toggle="tab"
+                    href="#stadium"
+                    role="tab"
+                    aria-controls="stadium"
+                    aria-selected="false"
+                    >parents</a
+                  >
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="home"
+                  role="tabpanel"
+                  aria-labelledby="home-tab"
+                >
+                  <app-teachers-tab></app-teachers-tab>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="profile"
+                  role="tabpanel"
+                  aria-labelledby="profile-tab"
+                >
+                  <app-student-tab></app-student-tab>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="contact"
+                  role="tabpanel"
+                  aria-labelledby="contact-tab"
+                >
+                  <app-course-tab></app-course-tab>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="stadium"
+                  role="tabpanel"
+                  aria-labelledby="stadium-tab"
+                >
+                  <app-parent-tab></app-parent-tab>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Add more cards as needed -->
+</div>

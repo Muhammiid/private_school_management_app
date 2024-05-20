@@ -1,0 +1,4 @@
+.teacher{
+        display: flex;
+        flex-wrap: wrap;
+}

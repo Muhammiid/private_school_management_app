@@ -1,65 +1,87 @@
-<header
-  class="site-navbar py-4 js-sticky-header site-navbar-target"
-  role="banner"
->
+<!-- Add this CSS in your <head> section or your CSS file -->
+  <style>
+    .nav-item .nav-link.active {
+      font-size: 20px;
+      font-weight: bold;
+      color: #833bc6; /* Example: white text */
+      border-radius: 0.25rem; /* Example: rounded corners */
+      border-bottom: 3px solid #833bc6; /* Line under the active link */
 
-  <div class="container-fluid">
-    <div class="d-flex align-items-center">
-      <div class="site-logo mr-auto w-25">
-        <a routerLink="app-home">OneSchool</a>
-      </div>
-
-      <div class="mx-auto text-center">
-        <nav
-          class="site-navigation position-relative text-right"
-          role="navigation"
-        >
-          <ul
-            class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block m-0 p-0"
-          >
-            <li><a routerLink="app-home" routerLinkActive="active" class="nav-link text-left">Home</a></li>
-            <li><a  routerLink="app-all-courses" routerLinkActive="active"  class="nav-link">Courses</a></li>
-            <li><a routerLink="app-teachers"   routerLinkActive="active" >Teachers</a></li>
-            <li  *ngIf="isloggedIn()&&decodedToken.role=='admin'" class="has-children">
-              <a  class="nav-link text-left">Admin</a>
-              <ul class="dropdown">
-                <li><a routerLink="app-add-course">Add Course</a></li>
-                <li ><a routerLink="app-dashboard-admin">Dashboard</a></li>
-              </ul>
-            </li>
-            <li  *ngIf="isloggedIn()&&decodedToken.role=='teacher'" class="has-children">
-              <a  class="nav-link text-left">Teacher</a>
-              <ul class="dropdown">
-                <li><a routerLink="app-add-course-teacher">Add Course</a></li>
-                <li ><a routerLink="app-teacher-dashboard">Dashboard</a></li>
-              </ul>
-            </li>
-            <li  *ngIf="isloggedIn()&&decodedToken.role=='student'" class="has-children">
-              <a  class="nav-link text-left">Student</a>
-              <ul class="dropdown">
-                <li ><a routerLink="app-dashboard-student">Dashboard</a></li>
-              </ul>
-            </li>
-            <li  *ngIf="isloggedIn()&&decodedToken.role=='parent'" class="has-children">
-              <a  class="nav-link text-left">Parent</a>
-              <ul class="dropdown">
-                <li ><a routerLink="app-dashboard-parent">Dashboard</a></li>
-              </ul>
-            </li>
-            <li   *ngIf="!isloggedIn()"class="has-children">
-              <a routerLinkActive="active"  class="nav-link text-left">SignUp</a>
-              <ul class="dropdown">
-                <li><a routerLinkActive="active" routerLink="app-signup-admin">SignUp Admin</a></li>
-                <li><a routerLinkActive="active" routerLink="app-signup-teacher">SignUp Teachers</a></li>
-                <li><a routerLinkActive="active" routerLink="app-signup-student">SignUp Students</a></li>
-                <li><a routerLinkActive="active" routerLink="app-signup-parent">SignUp Parents</a></li>
-              </ul>
-            </li>
-            <li *ngIf="!isloggedIn()"><a routerLinkActive="active" routerLink="app-login">Login</a></li>
-            <li *ngIf="isloggedIn()" (click)="logout()"><a routerLink="app-signup-parent">LogOut</a></li>
-          </ul>
-        </nav>
-      </div>
+    }
+    .nav-item .nav-link {
+      font-size:20px;
+      color: black;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .nav-item .nav-link:hover {
+      color: #6038bd; /* Example: change text color on hover */
+    }
+  </style>
+  
+  <!-- Navbar HTML -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" style="margin-left: 5%;font-weight: bolder;font-size: 30px;" routerLink="app-home">Private school</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-right: 5%;">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active mx-2">
+          <a class="nav-link" routerLink="app-home" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" routerLink="app-all-courses" routerLinkActive="active">Courses</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" routerLink="app-teachers" routerLinkActive="active">Teachers</a>
+        </li>
+        <li class="nav-item active mx-2" *ngIf="isloggedIn()&&decodedToken.role=='admin'">
+          <a class="nav-link"  routerLink="app-dashboard-admin" routerLinkActive="active">Admin</a>
+        </li>
+        
+        <li class="nav-item dropdown mx-2" *ngIf="isloggedIn()&&decodedToken.role=='teacher'">
+          <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Teacher 
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="app-add-course-teacher" routerLinkActive="active">Add Course</a>
+            <a class="dropdown-item" routerLink="app-teacher-dashboard" routerLinkActive="active">Dashboard</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown mx-2" *ngIf="isloggedIn()&&decodedToken.role=='student'">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Student 
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="app-dashboard-student" routerLinkActive="active">Dashboard</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown mx-2" *ngIf="isloggedIn()&&decodedToken.role=='parent'">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Parent 
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="app-dashboard-parent" routerLinkActive="active">Dashboard</a>
+          </div>
+        </li>
+        <li *ngIf="!isloggedIn()" class="nav-item dropdown mx-2">
+          <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Signup
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="app-signup-admin" routerLinkActive="active">SignUp Admin</a>
+            <a class="dropdown-item" routerLink="app-signup-teacher" routerLinkActive="active">SignUp Teacher</a>
+            <a class="dropdown-item" routerLink="app-signup-student" routerLinkActive="active">SignUp Student</a>
+            <a class="dropdown-item" routerLink="app-signup-parent" routerLinkActive="active">SignUp Parent</a>
+          </div>
+        </li>
+        <li class="nav-item mx-2" *ngIf="!isloggedIn()"><a class="nav-link" routerLink="app-login" routerLinkActive="active">Login</a></li>
+        <li class="nav-item mx-2" *ngIf="isloggedIn()" (click)="logout()"><a class="nav-link" routerLink="app-home">LogOut</a></li>
+      </ul>
     </div>
-  </div>
-</header>
+  </nav>
+  
+
+
+  

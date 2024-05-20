@@ -21,7 +21,6 @@ import { AllCoursesComponent } from './components/all-courses/all-courses.compon
 
 const routes: Routes = [
   { path: '',redirectTo:'app-home',pathMatch:'full'},
-
   { path: 'app-home', component: HomeComponent },
   { path: 'app-signup-admin', component: SignupFormComponent },
   { path: 'app-signup-teacher', component: SignupFormComponent },

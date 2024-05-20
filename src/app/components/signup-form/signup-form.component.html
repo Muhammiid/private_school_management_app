@@ -1,233 +1,301 @@
-<div class="intro-section" id="home-section">
-  <div
-    class="slide-1"
-    style="background-image: url('assets/images/hero_1.jpg'); height: 1000px;"     data-stellar-background-ratio="0.5" 
-  >
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-12">
-          <div class="row align-items-center">
-            <div class="col-lg-6 mb-4">
-              <h1 data-aos="fade-up" data-aos-delay="100">
-                Learn From The Expert
-              </h1>
-              <p class="mb-4" data-aos="fade-up" data-aos-delay="200">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-                ipsa nulla sed quis rerum amet natus quas necessitatibus.
-              </p>
-              <p data-aos="fade-up" data-aos-delay="300">
-                <a href="#" class="btn btn-primary py-3 px-5 btn-pill"
-                  >Admission Now</a
-                >
-              </p>
-            </div>
-            <div
-              class="col-lg-5 ml-auto"
-              data-aos="fade-up"
-              data-aos-delay="500"
-            >
-              <form [formGroup]="signupForm" style="margin-top: 100px;">
-                <h3 class="mb-4" style="color: #7971ea; text-align: center">
-                  Signup {{ btnsignup }}
-                </h3>
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="First Name"
-                    formControlName="firstName"
-                  />
-                </div>
-                <div
-            *ngIf="
-              signupForm.controls['firstName'].invalid &&
-              (signupForm.controls['firstName'].touched ||
-                signupForm.controls['firstName'].dirty)
-            "
-          >
-            <div *ngIf="signupForm.controls['firstName'].errors?.['required']">
-              First Name is required!
-            </div>
-
-            <div *ngIf="signupForm.controls['firstName'].errors?.['minlength']">
-              First Name must have at least 3 chars!
-            </div>
-          </div>
-                
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Last Name"
-                    formControlName="lastName"
-                  />
-                </div>
-                <div
-            *ngIf="
-              signupForm.controls['lastName'].invalid &&
-              (signupForm.controls['lastName'].touched ||
-                signupForm.controls['lastName'].dirty)
-            "
-          >
-            <div *ngIf="signupForm.controls['lastName'].errors?.['required']">
-              Last Name is required!
-            </div>
-
-            <div *ngIf="signupForm.controls['lastName'].errors?.['minlength']">
-              Last Name must have at least 5 chars!
-            </div>
-          </div>
-
-                
-                <div class="form-group">
-                  <input
-                    type="email"
-                    class="form-control"
-                    placeholder="Email Address"
-                    formControlName="email"
-                  />
-                </div>
-                <div
-            *ngIf="
-              signupForm.controls['email'].invalid &&
-              (signupForm.controls['email'].touched ||
-                signupForm.controls['email'].dirty)
-            "
-          >
-            <div *ngIf="signupForm.controls['email'].errors?.['required']">
-              Email is required!
-            </div>
-
-            <div *ngIf="signupForm.controls['email'].errors?.['email']">
-              is not the form of Email !
-            </div>
-          </div>
-                
-                <div class="form-group">
-                  <input
-                    type="password"
-                    class="form-control"
-                    placeholder="Password"
-                    formControlName="password"
-                  />
-                </div>
-                <div
-                *ngIf="
-                  signupForm.controls['password'].invalid &&
-                  (signupForm.controls['password'].touched ||
-                    signupForm.controls['password'].dirty)
-                "
+<div style="display: block">
+  <div class="intro-section" id="home-section">
+    <div
+      class="slide-1"
+      style="background-image: url('assets/images/hero_1.jpg'); height: 500px"
+      data-stellar-background-ratio="0.5"
+    >
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-12">
+            <div class="row justify-content-center align-items-center">
+              <div
+                class="col-lg-7 text-center"
+                data-aos="fade-up"
+                data-aos-delay=""
               >
-                <div *ngIf="signupForm.controls['password'].errors?.['required']">
-                  pwd is required!
-                </div>
-                
-                <div
-                  *ngIf="signupForm.controls['password'].errors?.['minlength']  "
-                >
-                  passWord must have at least 6 chars and max 10 chars !
-                </div>
+                <h2 class="section-title" style="color: #7971ea">
+                  Signup {{btnsignup}}
+                </h2>
               </div>
-              <div *ngIf="path == '/app-signup-teacher'" class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="speciality"
-                  formControlName="speciality"
-                />
-              </div>
-                
-                <div  class="form-group">
-                  <input
-                    type="tel"
-                    class="form-control"
-                    placeholder="Phone Number"
-                    formControlName="phoneNumber"
-                  />
-                </div>
-                <div
-                *ngIf="
-                  signupForm.controls['phoneNumber'].invalid &&
-                  (signupForm.controls['phoneNumber'].touched ||
-                    signupForm.controls['phoneNumber'].dirty)
-                "
-              >
-                <div *ngIf="signupForm.controls['phoneNumber'].errors?.['required']">
-                  phone number is required!
-                </div>
-              </div>
-                <div *ngIf="path == '/app-signup-parent'">
-                <div class="form-group">
-                  <input
-                    type="tel"
-                    class="form-control"
-                    placeholder=" child Phone Number"
-                    formControlName="childPhoneNumber"
-                  />
-                </div>
-                <div
-                *ngIf="
-                  signupForm.controls['childPhoneNumber'].invalid &&
-                  (signupForm.controls['childPhoneNumber'].touched ||
-                    signupForm.controls['childPhoneNumber'].dirty)
-                "
-              >
-                <div *ngIf="signupForm.controls['childPhoneNumber'].errors?.['required']">
-                  child phone number is required!
-                </div>
-              </div>
-            </div>
-
-            <div style="display: flex;margin-top: -50px;">
-            <div *ngIf="path == '/app-signup-teacher' " >
-              <div class="form-group" style="visibility: hidden;" (change)="onCvSelected($event)">
-                <input type="file" class="form-control" #cvfilepicker >
-              </div>
-              <div class="text-center">
-                <button class="btn btn-warning" (click)="cvfilepicker.click()">select your cv</button>
-              </div>
-              <div class="text-center mt-2" >
-                <embed [src]="cvPreview" type="application/pdf" width="200px" height="240px">
-                </div>
-            </div>
-
-            <div *ngIf="path == '/app-signup-student' || path == '/app-signup-teacher'" 
-            >
-     
- 
-       
-              <div class="form-group" style="visibility: hidden;" (change)="onImageSelected($event)">
-                <input type="file" class="form-control" #filepicker >
-              </div>
-              <div class="text-center">
-                <button class="btn btn-warning" (click)="filepicker.click()">select your avatar</button>
-              </div>
-              <div class="text-center mt-2" >
-                <img [src]="imagePreview" alt="" width="200px" height="240px">
-
-              </div>
-
-            </div>
-
-
-          </div>
-         
-                <div class="form-group" style="text-align:center;margin-top:50px ;">
-                  <div>{{msg}}
-                  </div>
-                  <input
-
-                    type="submit"
-                    (click)="signup()"
-                    class="btn btn-primary py-3 px-5"
-                    value="Signup"
-                  />
-                </div>
-              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div style="background-color: #343a40">
+    <div class="row">
+      <div class="col-12 text-center"></div>
+    </div>
+    <div class="card-container ">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12">
+            <div class="row align-items-center">
+              <div class="col-lg-6 mt-2">
+                <h1 data-aos="fade-up" data-aos-delay="100">
+                  Learn From The Expert
+                </h1>
+                <p class="mb-4" data-aos="fade-up" data-aos-delay="200">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Maxime ipsa nulla sed quis rerum amet natus quas 
+                  necessitatibus.
+                </p>
+                <p data-aos="fade-up" data-aos-delay="300">
+                  <a href="#" class="btn btn-primary py-3 px-5 btn-pill"
+                    >Admission Now</a
+                  >
+                </p>
+              </div>
+              <div
+                class="col-lg-6 ml-auto"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <form [formGroup]="signupForm" class="mt-5" >
+                
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="First Name"
+                      formControlName="firstName"
+                    />
+                  </div>
+                  <div
+                    *ngIf="
+                      signupForm.controls['firstName'].invalid &&
+                      (signupForm.controls['firstName'].touched ||
+                        signupForm.controls['firstName'].dirty)
+                    "
+                  >
+                    <div
+                      *ngIf="signupForm.controls['firstName'].errors?.['required']"
+                    >
+                      First Name is required!
+                    </div>
+
+                    <div
+                      *ngIf="signupForm.controls['firstName'].errors?.['minlength']"
+                    >
+                      First Name must have at least 3 chars!
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Last Name"
+                      formControlName="lastName"
+                    />
+                  </div>
+                  <div
+                    *ngIf="
+                      signupForm.controls['lastName'].invalid &&
+                      (signupForm.controls['lastName'].touched ||
+                        signupForm.controls['lastName'].dirty)
+                    "
+                  >
+                    <div
+                      *ngIf="signupForm.controls['lastName'].errors?.['required']"
+                    >
+                      Last Name is required!
+                    </div>
+
+                    <div
+                      *ngIf="signupForm.controls['lastName'].errors?.['minlength']"
+                    >
+                      Last Name must have at least 5 chars!
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Email Address"
+                      formControlName="email"
+                    />
+                  </div>
+                  <div
+                    *ngIf="
+                      signupForm.controls['email'].invalid &&
+                      (signupForm.controls['email'].touched ||
+                        signupForm.controls['email'].dirty)
+                    "
+                  >
+                    <div
+                      *ngIf="signupForm.controls['email'].errors?.['required']"
+                    >
+                      Email is required!
+                    </div>
+
+                    <div *ngIf="signupForm.controls['email'].errors?.['email']">
+                      is not the form of Email !
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Password"
+                      formControlName="password"
+                    />
+                  </div>
+                  <div
+                    *ngIf="
+                      signupForm.controls['password'].invalid &&
+                      (signupForm.controls['password'].touched ||
+                        signupForm.controls['password'].dirty)
+                    "
+                  >
+                    <div
+                      *ngIf="signupForm.controls['password'].errors?.['required']"
+                    >
+                      pwd is required!
+                    </div>
+
+                    <div
+                      *ngIf="signupForm.controls['password'].errors?.['minlength']  "
+                    >
+                      passWord must have at least 6 chars and max 10 chars !
+                    </div>
+                  </div>
+                  <div *ngIf="path == '/app-signup-teacher'" class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="speciality"
+                      formControlName="speciality"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <input
+                      type="tel"
+                      class="form-control"
+                      placeholder="Phone Number"
+                      formControlName="phoneNumber"
+                    />
+                  </div>
+                  <div
+                    *ngIf="
+                      signupForm.controls['phoneNumber'].invalid &&
+                      (signupForm.controls['phoneNumber'].touched ||
+                        signupForm.controls['phoneNumber'].dirty)
+                    "
+                  >
+                    <div
+                      *ngIf="signupForm.controls['phoneNumber'].errors?.['required']"
+                    >
+                      phone number is required!
+                    </div>
+                  </div>
+                  <div *ngIf="path == '/app-signup-parent'">
+                    <div class="form-group">
+                      <input
+                        type="tel"
+                        class="form-control"
+                        placeholder=" child Phone Number"
+                        formControlName="childPhoneNumber"
+                      />
+                    </div>
+                    <div
+                      *ngIf="
+                        signupForm.controls['childPhoneNumber'].invalid &&
+                        (signupForm.controls['childPhoneNumber'].touched ||
+                          signupForm.controls['childPhoneNumber'].dirty)
+                      "
+                    >
+                      <div
+                        *ngIf="signupForm.controls['childPhoneNumber'].errors?.['required']"
+                      >
+                        child phone number is required!
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style="display: flex; margin-top: -50px">
+                    <div *ngIf="path == '/app-signup-teacher'">
+                      <div
+                        class="form-group"
+                        style="visibility: hidden"
+                        (change)="onCvSelected($event)"
+                      >
+                        <input type="file" class="form-control" #cvfilepicker />
+                      </div>
+                      <div class="text-center">
+                        <button
+                          class="btn btn-warning"
+                          (click)="cvfilepicker.click()"
+                        >
+                          select your cv
+                        </button>
+                      </div>
+                      <div class="text-center mt-2">
+                        <embed
+                          [src]="cvPreview"
+                          type="application/pdf"
+                          width="200px"
+                          height="240px"
+                        />
+                      </div>
+                    </div>
+
+                    <div
+                      *ngIf="
+                        path == '/app-signup-student' ||
+                        path == '/app-signup-teacher'
+                      "
+                    >
+                      <div
+                        class="form-group"
+                        style="visibility: hidden"
+                        (change)="onImageSelected($event)"
+                      >
+                        <input type="file" class="form-control" #filepicker />
+                      </div>
+                      <div class="text-center">
+                        <button
+                          class="btn btn-warning"
+                          (click)="filepicker.click()"
+                        >
+                          select your avatar
+                        </button>
+                      </div>
+                      <div class="text-center mt-2">
+                        <img
+                          [src]="imagePreview"
+                          alt=""
+                          width="200px"
+                          height="240px"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="form-group"
+                    style="text-align: center; margin-top: 50px"
+                  >
+                    <div>{{ msg }}</div>
+                    <input
+                      type="submit"
+                      (click)="signup()"
+                      class="btn btn-primary py-3 px-5"
+                      value="Signup"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add more cards as needed -->
   </div>
 </div>
