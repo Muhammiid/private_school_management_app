@@ -34,9 +34,7 @@ import { NextDirective } from './components/carouusel/next.directive';
 import { PrevDirective } from './components/carouusel/prev.directive';
 import { TeacherComponent } from './components/teacher/teacher.component';
 import { AllCoursesComponent } from './components/all-courses/all-courses.component';
-
-
-
+import { NewcarouseledComponent } from './components/newcarouseled/newcarouseled.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +69,7 @@ import { AllCoursesComponent } from './components/all-courses/all-courses.compon
     PrevDirective,
     TeacherComponent,
     AllCoursesComponent,
+    NewcarouseledComponent,
   ],
   imports: [BrowserModule,FormsModule,AppRoutingModule,ReactiveFormsModule,HttpClientModule],
   providers: [],

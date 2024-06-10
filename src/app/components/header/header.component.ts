@@ -13,8 +13,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
- 
-  
   isloggedIn(): boolean {
     let token: any = sessionStorage.getItem('token');
     if (token) {

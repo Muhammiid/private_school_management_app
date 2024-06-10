@@ -18,6 +18,7 @@ import { DashboardStudentComponent } from './components/dashboard-student/dashbo
 import { DashboardParentComponent } from './components/dashboard-parent/dashboard-parent.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
 import { AllCoursesComponent } from './components/all-courses/all-courses.component';
+import { NewcarouseledComponent } from './components/newcarouseled/newcarouseled.component';
 
 const routes: Routes = [
   { path: '',redirectTo:'app-home',pathMatch:'full'},
@@ -42,8 +43,7 @@ const routes: Routes = [
   { path: 'app-dashboard-parent', component: DashboardParentComponent },
   { path: 'app-teachers', component: TeachersComponent },
   { path: 'app-all-courses', component: AllCoursesComponent },
-
-
+  { path: 'app-newcarouseled', component: NewcarouseledComponent },
 
 
 ];

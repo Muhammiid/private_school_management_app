@@ -85,7 +85,7 @@
     </div>
   </div>
   <div class="card-container mt-5">
-    <div id="course" *ngFor="let elt of courses">
+    <div style="display: flex;flex-direction: row;flex-wrap: wrap;" id="course" *ngFor="let elt of courses">
       <app-course [course]="elt"></app-course>
     </div>
   </div>
